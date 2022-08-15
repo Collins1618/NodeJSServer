@@ -8,5 +8,9 @@ const server = http.createServer((req, res) => {
     console.log("Request made");
 });
 
-//to get our 
+//to get our server to start listening to requests
+//invoke the listen() method;
+server.listen(3000, 'localhost', () => {
+    console.log('listening for requests on port 3000');
+});
 
