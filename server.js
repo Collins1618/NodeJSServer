@@ -8,10 +8,11 @@ const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
 
     //set header content type
-    res.setHeader('Content-Type', 'text/plain'); //we are sending back
+    res.setHeader('Content-Type', 'text/html'); //we are sending back
     //some plain text
 
-    res.write('hello, ninjas');
+    res.write('<p>Hello, ninjas</p>')
+    res.write('<p>Hello again, ninjas</p>')
     res.end(); //end the response for it to be sent back
 });
 
