@@ -1,5 +1,6 @@
 //import core module http
 const http = require('http');
+const fs = require('fs'); //require file system moddule
 
 //use http to create server and store in a variable
 //createServer takes a request listener as an argument
@@ -11,9 +12,11 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/html'); //we are sending back
     //some plain text
 
-    res.write('<p>Hello, ninjas</p>')
-    res.write('<p>Hello again, ninjas</p>')
-    res.end(); //end the response for it to be sent back
+    // res.write('<p>Hello, ninjas</p>')
+    // res.write('<p>Hello again, ninjas</p>')
+    // res.end(); //end the response for it to be sent back
+
+
 });
 
 //to get our server to start listening to requests
