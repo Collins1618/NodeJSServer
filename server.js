@@ -5,7 +5,11 @@ const http = require('http');
 //createServer takes a request listener as an argument
 
 const server = http.createServer((req, res) => {
-    console.log("Request made");
+    console.log(req.url, req.method);
+
+    //set header content type
+    res.setHeader('Content-Type', 'text/plain'); //we are sending back
+    //some plain text
 });
 
 //to get our server to start listening to requests
