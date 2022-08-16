@@ -10,6 +10,9 @@ const server = http.createServer((req, res) => {
     //set header content type
     res.setHeader('Content-Type', 'text/plain'); //we are sending back
     //some plain text
+
+    res.write('hello, ninjas');
+    res.end(); //end the response for it to be sent back
 });
 
 //to get our server to start listening to requests
