@@ -12,9 +12,17 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/html'); //we are sending back
     //some plain text
 
-    // res.write('<p>Hello, ninjas</p>')
-    // res.write('<p>Hello again, ninjas</p>')
-    // res.end(); //end the response for it to be sent back
+    //send and html file, read the file first
+    fs.readFile('./views/index.html', (err, data) => {
+        if(err) {
+            console.log(err);
+            res.end(); //to avoid keeping the request hanging
+        }
+        else {
+           // res.write(data); //sends html page to the browser
+            res.end(data);
+        }
+    })
 
 
 });
