@@ -23,6 +23,16 @@ const server = http.createServer((req, res) => {
             path += 'about.html';
             res.statusCode = 200;
             break;
+        case '/about-me':
+            
+            res.statusCode = 301; //means resource you're trying to
+            //access has been permanently moved and we are going to do 
+            //a permanent redirect
+
+            //actual redirection
+            res.setHeader('Location', '/about');
+            res.end();
+            break;
         default:
             path += '404.html';
             res.statusCode = 404;
